@@ -5,63 +5,65 @@ import hungyHopper from '../assets/proj2.png'
 import Library from '../assets/proj3.png'
 import CodeCrfter from '../assets/proj4.png'
 import TextExtractor from '../assets/proj5.png'
+import WeatherApp from '../assets/proj6.png'
+import invitationApp from '../assets/proj7.png'
 
 const projectsData = [
   {
     title: "Jana Sahayak",
-    description: "A full-featured online shopping platform with cart functionality and payment integration.",
+    description: "A grievance management system that enables citizens to lodge complaints, track their status, and receive resolutions efficiently.",
     image: Janasahayak,
-    techStack: ["React", "Node.js", "MongoDB", "Stripe"],
-    githubLink: "https://github.com/username/e-commerce",
-    liveLink: "https://e-commerce-demo.com"
+    techStack: ["React", "Node.js", "MongoDB", "Express"],
+    githubLink: "https://github.com/username/jana-sahayak",
+    liveLink: "https://jana-sahayak.com",
   },
   {
     title: "Hungry Hopper",
-    description: "A collaborative task management tool with real-time updates and team features.",
+    description: "A food ordering web app with an intuitive UI and smooth user experience.",
     image: hungyHopper,
-    techStack: ["React", "Firebase", "Tailwind CSS", "Redux"],
-    githubLink: "https://github.com/username/task-manager",
-    liveLink: "https://task-manager-demo.com"
+    techStack: ["React", "Node", "Tailwind CSS", "Stripe", "Express", "MongoDB"],
+    githubLink: "https://github.com/username/hungry-hopper",
+    liveLink: "https://hungryhopper-demo.com",
   },
   {
     title: "Book Byte",
-    description: "Real-time weather forecasting application with interactive maps and alerts.",
+    description: "An online library management system for tracking and managing books efficiently.",
     image: Library,
-    techStack: ["React", "OpenWeather API", "Chart.js", "Axios"],
-    githubLink: "https://github.com/username/weather-app",
-    liveLink: "https://weather-dashboard-demo.com"
+    techStack: ["React", "MongoDB", "Express", "Node.js", "Tailwind CSS"],
+    githubLink: "https://github.com/username/book-byte",
+    liveLink: "https://bookbyte-demo.com",
   },
   {
     title: "Code Crafter",
-    description: "Real-time weather forecasting application with interactive maps and alerts.",
+    description: "An interactive coding platform with real-time collaboration features.",
     image: CodeCrfter,
-    techStack: ["React", "OpenWeather API", "Chart.js", "Axios"],
-    githubLink: "https://github.com/username/weather-app",
-    liveLink: "https://weather-dashboard-demo.com"
+    techStack: ["React", "Node.js", "WebSockets", "Monaco Editor"],
+    githubLink: "https://github.com/username/code-crafter",
+    liveLink: "https://codecrafter-demo.com",
   },
   {
     title: "Text Extractor",
-    description: "Real-time weather forecasting application with interactive maps and alerts.",
+    description: "An OCR-based tool for extracting text from images and translating it.",
     image: TextExtractor,
-    techStack: ["React", "OpenWeather API", "Chart.js", "Axios"],
-    githubLink: "https://github.com/username/weather-app",
-    liveLink: "https://weather-dashboard-demo.com"
+    techStack: ["React", "Tesseract.js", "Google Translate API"],
+    githubLink: "https://github.com/username/text-extractor",
+    liveLink: "https://text-extractor-demo.com",
   },
   {
     title: "Weather App",
-    description: "Real-time weather forecasting application with interactive maps and alerts.",
-    image: "/api/placeholder/600/400",
+    description: "A weather forecasting application with real-time data and interactive maps.",
+    image: WeatherApp,
     techStack: ["React", "OpenWeather API", "Chart.js", "Axios"],
     githubLink: "https://github.com/username/weather-app",
-    liveLink: "https://weather-dashboard-demo.com"
+    liveLink: "https://weather-dashboard-demo.com",
   },
   {
-    title: "IMIT invitation Card",
-    description: "Real-time weather forecasting application with interactive maps and alerts.",
-    image: "/api/placeholder/600/400",
-    techStack: ["React", "OpenWeather API", "Chart.js", "Axios"],
-    githubLink: "https://github.com/username/weather-app",
-    liveLink: "https://weather-dashboard-demo.com"
+    title: "IMIT Invitation Card",
+    description: "A digital invitation card  for inviting freshers of IMIT MCA Students.",
+    image: invitationApp,
+    techStack: ["HTML","CSS", "JavaScript", "GSAP"],
+    githubLink: "https://github.com/username/imit-invitation",
+    liveLink: "https://imit-invitation-demo.com",
   },
 ];
 
@@ -77,7 +79,7 @@ const Projects = ({darkMode}) => {
           {projectsData.map((project, index) => (
             <div 
               key={index}
-              className={` rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105 ${darkMode?"bg-gray-900":"bg-gray-50"}`}
+              className={` rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105 ${darkMode?"bg-gray-900":"bg-gray-50 border-1 border-slate-200"}`}
             >
               {/* Project Image */}
               <div className="relative group">
@@ -86,24 +88,7 @@ const Projects = ({darkMode}) => {
                   alt={project.title}
                   className="w-full h-48 object-cover"
                 />
-                {/* <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
-                  <a 
-                    href={project.githubLink} 
-                    className="p-2  rounded-full hover:bg-gray-100 transition-colors duration-300"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Github className="w-6 h-6" />
-                  </a>
-                  <a 
-                    href={project.liveLink} 
-                    className="p-2 bg-white rounded-full hover:bg-gray-100 transition-colors duration-300"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ExternalLink className="w-6 h-6" />
-                  </a>
-                </div> */}
+                
               </div>
 
               {/* Project Info */}
@@ -116,7 +101,7 @@ const Projects = ({darkMode}) => {
                   {project.techStack.map((tech, techIndex) => (
                     <span 
                       key={techIndex}
-                      className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm"
+                      className="px-3 py-1 bg-blue-100 text-[#008d91] rounded-full text-sm"
                     >
                       {tech}
                     </span>
