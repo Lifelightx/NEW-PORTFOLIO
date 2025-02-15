@@ -95,7 +95,7 @@ export default function Portfolio() {
         <div id="home" className="pt-2">
           <Heros />
           <div className="mx-4 md:mx-8 lg:mx-16 space-y-16">
-            <div className=" backdrop-blur-lg rounded-xl shadow-lg"
+            <div id="about" className=" backdrop-blur-lg rounded-xl shadow-lg"
               
             >
               <About  darkMode={darkMode} />
