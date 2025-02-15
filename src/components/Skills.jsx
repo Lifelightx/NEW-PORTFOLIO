@@ -16,6 +16,7 @@ import { DiJavascript } from 'react-icons/di';
 import { SiTailwindcss } from 'react-icons/si';
 import { FaReact, FaNodeJs, FaPython, FaJava, FaHtml5, FaGit } from 'react-icons/fa';
 import { DiGithub } from 'react-icons/di';
+import { SiPostman } from 'react-icons/si';
 
 const skillsData = [
   { 
@@ -131,12 +132,12 @@ const skillsData = [
     description: 'Version control system'
   },
   { 
-    name: 'Vs Code', 
+    name: 'POST Man', 
     level: 88, 
     category: 'Tools',
-    icon: <VscCode className="w-6 h-6" />,
-    color: 'bg-blue-700',
-    description: 'Version control system'
+    icon: <SiPostman className="w-6 h-6" />,
+    color: 'bg-orange-700',
+    description: 'API Testing system'
   }
 ];
 
