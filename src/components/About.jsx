@@ -44,10 +44,10 @@ const About = ({darkMode}) => {
         transition={{ duration: 0.8 }}
         className="text-center mb-16"
       >
-        <h1 className="text-5xl font-bold mb-6" style={{ color: '#008d91' }}>
+        <h1 className="text-5xl font-bold mb-6" style={{ color: '#00abb1' }}>
           My Learning Journey
         </h1>
-        <div className="w-24 h-1 mx-auto" style={{ backgroundColor: '#008d91' }}></div>
+        <div className="w-24 h-1 mx-auto" style={{ backgroundColor: '#00abb1' }}></div>
       </motion.div>
 
       <div className="max-w-6xl mx-auto">

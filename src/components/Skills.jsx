@@ -300,7 +300,8 @@ const Skills = ({ darkMode }) => {
           variants={containerVariants}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl font-bold mb-4">Technical Skills</h1>
+          <h1 className="text-5xl text-[#00abb1] font-bold mb-4">Technical Skills</h1>
+          <div className="w-24 h-1 mx-auto" style={{ backgroundColor: '#00abb1' }}></div>
           <p className="text-xl text-gray-600 ">
             Expertise across various technologies and tools
           </p>
