@@ -27,16 +27,16 @@ const About = ({darkMode}) => {
     },
     {
       level: "10th Standard",
-      year: "2013-2014",
+      year: "2017-2018",
       details: "Secondary Education",
       icon: <Trophy className="w-6 h-6" />,
-      highlights: ["Academic Excellence", "Sports Activities", "Cultural Participation"]
+      highlights: ["K C High School", "IT enthuastic", "Percentage: 86.6"]
     }
   ];
 
   return (
     <div className={`min-h-screen transition-all py-4 duration-300 ${
-      darkMode ? "bg-[rgba(0,0,0,0.3)] text-white" : "bg-[rgba(250,250,250,0.3)] text-black"
+      darkMode ? "bg-[rgba(0,0,0,0.2)] text-white" : "bg-[rgba(250,250,250,0.2)] text-black"
     }`}>
       <motion.div
         initial={{ opacity: 0, y: -20 }}

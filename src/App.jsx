@@ -59,7 +59,7 @@ export default function Portfolio() {
   }, [darkMode]);
 
   return (
-    <div className={`relative min-h-screen transition-all duration-300 ${darkMode ? "bg-gray-900 text-white" : "bg-[rgb(250,250,250)] text-black"
+    <div className={`relative scroll-smooth min-h-screen transition-all duration-300 ${darkMode ? "bg-gray-900 text-white" : "bg-[rgb(250,250,250)] text-black"
       }`}>
       <AnimatedBackground />
 
@@ -96,17 +96,17 @@ export default function Portfolio() {
           <Heros />
           <div className="mx-4 md:mx-8 lg:mx-16 space-y-16">
             <div className=" backdrop-blur-lg rounded-xl shadow-lg"
-              style={{ "backgroundColor": "rgba(255,255,255,0.1)" }}
+              
             >
-              <About darkMode={darkMode} />
+              <About  darkMode={darkMode} />
             </div>
-            <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg">
+            <div id="skills" className="backdrop-blur-lg rounded-xl shadow-lg">
               <Skills darkMode={darkMode} />
             </div>
             <div id="projects" className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg">
               <Projects darkMode={darkMode} />
             </div>
-            <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg">
+            <div id="contact" className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg">
               <Contact darkMode={darkMode} />
             </div>
           </div>
