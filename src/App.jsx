@@ -65,11 +65,20 @@ export default function Portfolio() {
 
       {/* Updated Navbar without glassmorphism */}
       <nav className={`fixed top-0 left-0 w-full flex justify-between items-center py-8 px-14 shadow-lg z-50 transition-colors duration-300 ${darkMode ? "bg-gray-800" : "bg-white"
-        }`}>
+        }`}
+        
+        style={{ 
+          backgroundColor: darkMode ? "rgba(0,0,0,0.3)" : "rgba(255,255,255,0.2)",
+          backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
+          boxShadow: darkMode ? "0 4px 10px rgba(0, 0, 0, 0.3)" : "0 4px 10px rgba(255, 255, 255, 0.3)",
+          color: darkMode ? "#fff" : "#000",
+          transition: "all 0.3s ease"}}
+        >
         <h1 className="text-xl font-[poppins] text-[#008d91] font-bold">Jeebanjyoti.</h1>
 
         <ul className="hidden md:flex space-x-6">
-          {["Home", "Projects", "Skills", "About", "Contact"].map((item) => (
+          {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
             <motion.a
               key={item}
               href={`#${item.toLowerCase()}`}

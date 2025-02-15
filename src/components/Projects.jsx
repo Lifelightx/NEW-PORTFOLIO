@@ -79,7 +79,7 @@ const Projects = ({darkMode}) => {
           {projectsData.map((project, index) => (
             <div 
               key={index}
-              className={` rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105 ${darkMode?"bg-gray-900":"bg-gray-50 border-1 border-slate-200"}`}
+              className={` rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105 ${darkMode?"bg-gray-900 text-slate-300 ":"bg-gray-50  border-1 text-slate-800 border-slate-200"}`}
             >
               {/* Project Image */}
               <div className="relative group">
@@ -94,7 +94,7 @@ const Projects = ({darkMode}) => {
               {/* Project Info */}
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <p className=" mb-4">{project.description}</p>
                 
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2 mb-4">
