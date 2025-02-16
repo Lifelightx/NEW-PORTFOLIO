@@ -120,7 +120,7 @@ export default function Portfolio() {
             <div id="projects" className="backdrop-blur-lg rounded-xl shadow-lg">
               <Projects darkMode={darkMode} />
             </div>
-            <div id="contact" className="backdrop-blur-lg rounded-xl p-8 shadow-lg">
+            <div id="contact" className="backdrop-blur-lg rounded-xl  shadow-lg">
               <Contact darkMode={darkMode} />
             </div>
           </div>
