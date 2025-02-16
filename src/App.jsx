@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaSun, FaMoon, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaSun, FaMoon, FaGithub, FaLinkedin, FaTwitter, FaHeart } from "react-icons/fa";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
@@ -52,10 +52,14 @@ const AnimatedBackground = () => {
 };
 
 export default function Portfolio() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    // Get dark mode preference from localStorage
+    return localStorage.getItem("darkMode") === "true";
+  });
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", darkMode);
+    localStorage.setItem("darkMode", darkMode);
   }, [darkMode]);
 
   return (
@@ -66,15 +70,16 @@ export default function Portfolio() {
       {/* Updated Navbar without glassmorphism */}
       <nav className={`fixed top-0 left-0 w-full flex justify-between items-center py-8 px-14 shadow-lg z-50 transition-colors duration-300 ${darkMode ? "bg-gray-800" : "bg-white"
         }`}
-        
-        style={{ 
+
+        style={{
           backgroundColor: darkMode ? "rgba(0,0,0,0.3)" : "rgba(255,255,255,0.2)",
           backdropFilter: "blur(10px)",
           WebkitBackdropFilter: "blur(10px)",
           boxShadow: darkMode ? "0 4px 10px rgba(0, 0, 0, 0.3)" : "0 4px 10px rgba(255, 255, 255, 0.3)",
           color: darkMode ? "#fff" : "#000",
-          transition: "all 0.3s ease"}}
-        >
+          transition: "all 0.3s ease"
+        }}
+      >
         <h1 className="text-xl font-[poppins] text-[#008d91] font-bold">Jeebanjyoti.</h1>
 
         <ul className="hidden md:flex space-x-6">
@@ -105,9 +110,9 @@ export default function Portfolio() {
           <Heros />
           <div className="mx-4 md:mx-8 lg:mx-16 space-y-16">
             <div id="about" className=" backdrop-blur-lg rounded-xl shadow-lg"
-              
+
             >
-              <About  darkMode={darkMode} />
+              <About darkMode={darkMode} />
             </div>
             <div id="skills" className="backdrop-blur-lg rounded-xl shadow-lg">
               <Skills darkMode={darkMode} />
@@ -124,22 +129,25 @@ export default function Portfolio() {
 
       {/* Footer with glassmorphism */}
       {/* className="relative z-10 mt-16 bg-white bg-opacity-10 backdrop-blur-lg p-8 text-center" */}
-      <footer className={`relative z-10 mt-16 p-8 text-center ${
-      darkMode ? "bg-[rgba(0,0,0,0.5)] text-white" : "bg-[rgba(250,250,250,0.5)] text-black"
-    }`}>
+      <footer className={`relative z-10 mt-16 p-8 text-center ${darkMode ? "bg-[rgba(0,0,0,0.5)] text-white" : "bg-[rgba(250,250,250,0.5)] text-black"
+        }`}>
         <div className="flex justify-center space-x-4">
           <motion.div whileHover={{ scale: 1.2 }}>
-            <FaGithub className="hover:text-gray-500 cursor-pointer" size={24} />
+            <FaGithub onClick={()=> window.open("https://github.com/Lifelightx","_blank")} className="hover:text-[#008d91] cursor-pointer" size={24} />
           </motion.div>
           <motion.div whileHover={{ scale: 1.2 }}>
-            <FaLinkedin className="hover:text-blue-500 cursor-pointer" size={24} />
+            <FaLinkedin onClick={()=> window.open("https://www.linkedin.com/in/jeebanjyoti/","_blank")} className="hover:text-[#008d91] cursor-pointer" size={24} />
           </motion.div>
           <motion.div whileHover={{ scale: 1.2 }}>
-            <FaTwitter className="hover:text-blue-400 cursor-pointer" size={24} />
+            <FaTwitter onClick={()=> window.open("https://x.com/JeebanjyotiMal7","_blank")} className="hover:text-[#008d91] cursor-pointer" size={24} />
           </motion.div>
         </div>
-        <p className="mt-4">© {new Date().getFullYear()} My Portfolio. All rights reserved.</p>
+        <p className="mt-4 flex items-center justify-center gap-1">
+  © {new Date().getFullYear()} Jeebanjyoti. Designed & Developed with <FaHeart className="text-[#008d91]" />. All Rights Reserved.
+</p>
+
       </footer>
+
     </div>
   );
 }
