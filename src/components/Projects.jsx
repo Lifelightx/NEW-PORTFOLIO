@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Github, ExternalLink, Code2 } from 'lucide-react';
 import Janasahayak from '../assets/jana-sahayak.jpg'
 import hungyHopper from '../assets/proj2.png'
@@ -68,6 +68,37 @@ const projectsData = [
 ];
 
 const Projects = ({darkMode}) => {
+  const projectRefs = useRef([]);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    projectRefs.current.forEach((ref) => {
+      if (ref) {
+        observer.observe(ref);
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <section className={`min-h-screen transition-all py-4 duration-300 ${
       darkMode ? "bg-[rgba(0,0,0,0.2)] text-white" : "bg-[rgba(250,250,250,0.25)] text-black"
@@ -79,24 +110,26 @@ const Projects = ({darkMode}) => {
           {projectsData.map((project, index) => (
             <div 
               key={index}
-              className={` rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105 ${darkMode?"bg-gray-900 text-slate-300 ":"bg-gray-50  border-1 text-slate-800 border-slate-200"}`}
+              ref={el => projectRefs.current[index] = el}
+              className={`rounded-lg overflow-hidden shadow-lg transition-all duration-500 opacity-0 transform translate-y-8 ${
+                darkMode ? "bg-gray-900 text-slate-300" : "bg-gray-50 border-1 text-slate-800 border-slate-200"
+              }`}
+              style={{
+                transitionDelay: `${index * 150}ms`
+              }}
             >
-              {/* Project Image */}
               <div className="relative group">
                 <img 
                   src={project.image} 
                   alt={project.title}
                   className="w-full h-48 object-cover"
                 />
-                
               </div>
 
-              {/* Project Info */}
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className=" mb-4">{project.description}</p>
+                <p className="mb-4">{project.description}</p>
                 
-                {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.techStack.map((tech, techIndex) => (
                     <span 
@@ -108,7 +141,6 @@ const Projects = ({darkMode}) => {
                   ))}
                 </div>
 
-                {/* Project Links */}
                 <div className="flex gap-4 mt-4">
                   <a
                     href={project.githubLink}
