@@ -18,10 +18,10 @@ function Heros() {
         className="text-7xl mt-2 font-bold text-[#00a5ab]"
       />
       <div className="flex space-x-6 mt-4">
-        <motion.a whileHover={{ scale: 1.2 , boxShadow: "0px 0px 15px #00a5ab"}} href="#" className="text-2xl p-2 border-2 border-[#00a5ab] rounded-full text-[#008d91]"><FaGithub /></motion.a>
-        <motion.a whileHover={{ scale: 1.2 ,  boxShadow: "0px 0px 15px #00a5ab"}} href="#" className="text-2xl p-2 border-2 border-[#00a5ab] rounded-full text-[#008d91]"><FaLinkedin /></motion.a>
-        <motion.a whileHover={{ scale: 1.2 , boxShadow: "0px 0px 15px #00a5ab" }} href="#" className="text-2xl p-2 border-2 border-[#00a5ab] rounded-full text-[#008d91]"><FaTwitter /></motion.a>
-        <motion.a whileHover={{ scale: 1.2 , boxShadow: "0px 0px 15px #00a5ab" }} href="#" className="text-2xl p-2 border-2 border-[#00a5ab] rounded-full text-[#008d91]"><FaInstagram /></motion.a>
+        <motion.a whileHover={{ scale: 1.2 , boxShadow: "0px 0px 15px #00a5ab"}} href="https://github.com/Lifelightx" className="text-2xl p-2 border-2 border-[#00a5ab] rounded-full text-[#008d91]"><FaGithub /></motion.a>
+        <motion.a whileHover={{ scale: 1.2 ,  boxShadow: "0px 0px 15px #00a5ab"}} href="https://www.linkedin.com/in/jeebanjyoti/" className="text-2xl p-2 border-2 border-[#00a5ab] rounded-full text-[#008d91]"><FaLinkedin /></motion.a>
+        <motion.a whileHover={{ scale: 1.2 , boxShadow: "0px 0px 15px #00a5ab" }} href="https://x.com/JeebanjyotiMal7" className="text-2xl p-2 border-2 border-[#00a5ab] rounded-full text-[#008d91]"><FaTwitter /></motion.a>
+        <motion.a whileHover={{ scale: 1.2 , boxShadow: "0px 0px 15px #00a5ab" }} href="https://www.instagram.com/jeebanjyoti_mallik/" className="text-2xl p-2 border-2 border-[#00a5ab] rounded-full text-[#008d91]"><FaInstagram /></motion.a>
       </div>
     </section>
   )
