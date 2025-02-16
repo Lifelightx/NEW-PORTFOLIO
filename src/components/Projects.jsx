@@ -100,12 +100,12 @@ const Projects = ({darkMode}) => {
   }, []);
 
   return (
-    <section className={`min-h-screen transition-all py-10 duration-300 ${
+    <section className={`min-h-screen transition-all py-14  duration-300 ${
       darkMode ? "bg-[rgba(0,0,0,0.2)] text-white" : "bg-[rgba(250,250,250,0.25)] text-black"
     }`}>
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold text-[#00abb1] mb-4 text-center">My Projects</h2>
-        <div className="w-24 h-1 mx-auto mb-8" style={{ backgroundColor: '#00abb1' }}></div>        
+        <div className="w-24 h-1 mx-auto mb-2" style={{ backgroundColor: '#00abb1' }}></div>        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projectsData.map((project, index) => (
             <div 
