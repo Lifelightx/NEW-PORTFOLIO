@@ -90,6 +90,7 @@ export default function Portfolio() {
               className={`text-lg font-[poppins] font-medium hover:text-[#008d91] transition duration-300 ${darkMode ? "text-white" : "text-black"
                 }`}
               whileHover={{ scale: 1.1 }}
+                           
             >
               {item}
             </motion.a>
